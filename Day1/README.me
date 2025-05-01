@@ -1,0 +1,50 @@
+•
+What is Cloud?
+--------------
+* The cloud concept evolved from how organizations used to deploy applications.
+* Years ago, organizations would buy physical servers from companies like IBM or HP. They would bring these servers back and create a data center, which is a place where servers are stored, configured, wired, networked, and maintained with appropriate temperature settings.
+* A major problem with this traditional approach was resource wastage. If a server had large resources (e.g., 100 GB RAM, 100 CPU) but only one application using a fraction of those resources (e.g., 1GB RAM, 1 CPU) was deployed on it, the remaining resources were wasted, leading to high costs.
+* To address this waste, the concept of virtualization was introduced.
+* Virtualization allows you to create virtual servers or virtual layers on top of a single actual server. This enables deploying multiple applications on virtual servers within one physical server, reducing the need to buy many individual servers.
+* Using virtualization, virtual machines can be created and shared, even if the users don't know the exact physical location of the servers. The term "Cloud" is used because the resources (like servers) are interconnected, and you can use them without knowing their physical location.
+
+•
+Private Cloud vs. Public Cloud
+-------------------------------
+* Private Cloud is the concept where an organization uses virtualization to create and manage its own cloud infrastructure entirely within its organization. It is called private because it is specific to that organization, and resources are not shared with external organizations. Companies like banking sector firms or those handling sensitive information sometimes prefer private clouds. Platforms like OpenStack, VMware, and Zen are used for private cloud setups.
+* Public Cloud is a concept where cloud providers like Amazon (AWS), Microsoft (Azure), and Google (GCP) own and manage the data centers and the entire cloud ecosystem. They saw an opportunity because setting up and maintaining data centers was difficult and costly, especially for startups and mid-scale organizations. In a public cloud, anyone in the world with an account can request and use resources like virtual machines (called EC2 instances in AWS). You can often choose the general region for the resource, but you don't need to bother with the exact physical location. It's called public because anyone with an account can create instances, irrespective of their organization.
+
+•
+Difference between Public and Private Cloud
+--------------------------------------------
+* In a private cloud, your organization is responsible for maintaining and managing the entire cloud platform.
+* In a public cloud, the cloud providers (Amazon, Microsoft, Google) manage the entire data centers and ecosystem, and you request resources from them. You have control over the resources you request, but the providers create and manage the underlying infrastructure.
+
+•
+Why Public Cloud is Popular
+----------------------------
+* There are two main reasons for the popularity of the public cloud.
+* The main reason is to get rid of the entire maintenance overhead. For startups and mid-scale companies, maintaining data centers (including network configuration, ensuring servers are working, patching, security, power loss, etc.) requires a dedicated team and significant effort, which is an overhead. Public cloud platforms make it very simple; you just create an account and start creating resources.
+* The second reason is cost. While not the primary driver for everyone, the pay-as-you-go service model of public cloud makes it easy for users to just pay for the resources they use. Startups and mid-scale businesses often cannot afford the initial setup and ongoing maintenance costs of their own data centers.
+
+•
+Why AWS is Popular
+--------------------
+*AWS is particularly popular among cloud platforms like Azure and GCP.
+* The first reason is first-mover advantage. AWS was the pioneer in this market, starting the entire cloud concept and successfully implementing it. Many companies began their cloud journey with AWS and continued using it.
+* Because they started first and gained early adoption, AWS has a large market share.
+* This large market share translates to more job opportunities for people skilled in AWS compared to other platforms. While understanding any cloud platform is valuable as the core concepts are similar, AWS knowledge is highly sought after due to its widespread use. For someone starting their cloud journey, AWS is often suggested because of its market share and job prospects.
+
+
+•
+
+Cloud Repatriation
+---------------------
+* There is a trend of some people moving back from public cloud to on-premises (private cloud), a process called Cloud repatriation.
+* This is happening, but the number of users moving back is very small, estimated at 1% to 2% or even less.
+* Reasons for moving back can include security concerns, not achieving expected cost optimization, or not getting a real advantage from the public cloud.
+
+
+◦
+However, the number of users onboarding onto the public cloud is expected to continue growing, largely because startups and mid-scale companies find building and maintaining their own data centers prohibitively difficult and expensive.
+In summary, the concept revolves around understanding the evolution from traditional data centers to private and then public clouds, enabled by virtualization, and highlighting the benefits and popularity of public cloud platforms, with a focus on AWS as a leading provider.
