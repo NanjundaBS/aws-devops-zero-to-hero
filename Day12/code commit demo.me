@@ -1,0 +1,80 @@
+
+The overall goal is to use AWS CodeCommit as a managed Git repository service within AWS.
+
+**Initial Setup: Creating a Repository and IAM User**
+
+1.  **Access the AWS Management Console** and search for the **CodeCommit** service.
+2.  **Create a new repository**.
+    *   Click on the option to create a repository.
+    *   Provide a repository name (e.g., `demo repo CC`, `demo Repository code commit`).
+    *   Add an optional description.
+    *   Ignore the option to enable AWS CodeGuru.
+    *   Click the **Create** button.
+    
+3.  Note the **warning about using the root account** and the recommendation to switch to an IAM user for better security and 
+    functionality, especially for cloning via SSH/HTTPS.
+    
+4.  Navigate to the **IAM service** in a separate tab.
+
+5.  **Create a new IAM user**.
+    *   Go to the Users section and click "Add user".
+    *   Provide a username (e.g., `code commit user`).
+    *   Select the option to provide **AWS Management console access**.
+    *   Choose "Custom password" and set a password.
+    *   Uncheck the option "User must create new password at the next sign in" for demonstration purposes.
+    *   Click **Next**.
+    
+6.  **Set permissions for the IAM user** by attaching policies directly (for demo purposes).
+    *   Search for "code commit".
+    *   Select the **`CodeCommitPowerUser`** policy. This policy provides necessary access for demonstrations and integrations.
+    *   Click **Next**.
+    *   Review and click **Create user**.
+    
+7.  **Copy the Account ID** provided for the IAM user login URL.
+
+8.  **Log in as the IAM user**.
+    *   Open an incognito window or a new browser session.
+    *   Go to the AWS console login page.
+    *   Select **"IAM user"**.
+    *   Enter the **Account ID**.
+    *   Enter the **IAM username** (e.g., `code commit user`) and the password you set.
+    *   Click **Sign in**.
+    
+9.  **Navigate back to the CodeCommit service** while logged in as the IAM user.
+
+10. **Ensure you are in the correct AWS Region** where the repository was created. Your repository should now be visible.
+
+**Method 1: Adding/Editing Files via the AWS Management Console UI (Limited)**
+
+*   Access your repository (`demo repo CC`) from the list.
+*   You can add files by clicking the **"Add file"** or **"Upload file"** option.
+*   You can **upload a file** from your local machine.
+*   Provide author details (name and email).
+*   Add a **commit message**.
+*   Click the **Commit changes** button.
+*   *Note:* This method is limited to **uploading or editing one file at a time**.
+
+**Method 2: Cloning and Pushing Files via Terminal/IDE (Recommended for multiple files)**
+
+*   From the CodeCommit repository page, locate and **copy the HTTPS Clone URL**.
+*   **(Prerequisite)** **Install Git** on your local computer. You can search for "git download" online, choose your operating system (Mac 
+       OS, Windows, Linux), and follow the installation instructions.
+*   **(Verification)** Open your terminal and run `git --version` to ensure Git is installed correctly.
+*   Open your terminal or IDE.
+*   Use the command: `git clone <Paste_HTTPS_Clone_URL_Here>`.
+*   When prompted, enter the **username and password of the IAM user** you created earlier. (The speaker notes this might fail initially 
+    if other Git credentials are saved, but for a fresh setup, it will ask for credentials).
+*   **(Assignment Step)** Navigate into the newly cloned repository directory using the `cd` command, e.g., `cd demo-repo-CC`.
+*   **(Assignment Step)** **Set your global Git configuration** for user name and email if you haven't already. You'll likely be prompted 
+    for this when you try to commit. The commands are `git config --global user.name "Your Name"` and `git config --global user.email 
+    "your_email@example.com"`.
+*   **(Assignment Step)** **Create a new file** inside this directory using a text editor or command like `vim`, e.g., `vim testfile.txt`, 
+   and add some content.
+*   **(Assignment Step)** Use standard Git commands to stage, commit, and push the changes:
+    *   `git add .` (to stage all changes).
+    *   `git commit -m "Your commit message"` (to commit changes).
+    *   `git push` (to push changes to the CodeCommit repository).
+*   **(Verification)** Go back to the CodeCommit repository in the AWS Management Console UI and verify that the file you pushed from the 
+    terminal is now visible in the repository.
+
+This completes the basic demonstration steps for creating a repository, setting up an IAM user for access, and interacting with the repository using either the UI or the command line.
